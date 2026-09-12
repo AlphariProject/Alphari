@@ -1,0 +1,209 @@
+/* Плавная прокрутка всей страницы */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Общий фон страницы с градиентом и текстурой */
+body {
+    background-color: #0f172a;
+    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%), url('bg.jpg');
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 70px; /* Чтобы контент не прятался под фиксированным меню */
+}
+
+/* Шапка-меню а-ля Alpine Linux */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 15px 0;
+}
+
+header a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+header a:hover {
+    color: #38bdf8;
+}
+
+/* Заголовки */
+.staring {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.staring h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.staring h2 {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    color: #94a3b8;
+}
+
+/* Консольное окошко */
+.language-bash {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    background-color: rgba(30, 41, 59, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+/* Стили для страницы информации */
+.info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background-color: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    color: #38bdf8;
+    font-size: 1.1rem;
+}
+
+.info-card p {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+.download-note {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.download-note a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.download-note a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для страницы скачивания и новостей */
+.download-container, .changelog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.download-card {
+    background-color: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #0ea5e9;
+}
+
+.changelog-list {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px 30px;
+    backdrop-filter: blur(5px);
+}
+
+.changelog-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+}
+
+.changelog-list li:last-child {
+    border-bottom: none;
+}
+
+.badge-plus {
+    color: #34d399;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.badge-mixed {
+    color: #fbbf24;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.prompt { color: #34d399; }
+.command { color: #fbbf24; }
+.output { color: #38bdf8; }
+.coment { color: #64748b; }
