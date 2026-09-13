@@ -8,6 +8,7 @@ using Cosmos.System.FileSystem.VFS;
 using Microsoft.CSharp.RuntimeBinder;
 using System;
 using System.IO;
+using System.Runtime.Intrinsics.X86;
 using System.Threading;
 using ATA_PIO = Alphari_v2.ATA.ATA_PIO;
 using Sys = Cosmos.System;
@@ -28,7 +29,7 @@ namespace Alphari_v2
         string cwd = "1:\\";
         protected override void BeforeRun()
         {
-            
+
         }
 
         protected override void Run()
@@ -207,7 +208,7 @@ type: {(int)ataDevice.Type}");
                         }
                         break;
                     case "rm":
-                        if (parts.Length > 1
+                        if (parts.Length > 1)
                         {
                             switch (parts[1])
                             {
@@ -230,8 +231,9 @@ type: {(int)ataDevice.Type}");
                     case "cd": if (parts.Length != 1) cwd = parts[1]; break;
                     case "cat": foreach (var l in File.ReadAllLines(parts[1])) { Console.WriteLine(l); } break;
                     case "apnd": if (parts.Length > 2) { File.AppendAllText(parts[1], parts[2]); } break;
-                    case "host": Console.WriteLine("alphari"); break;
-                    cse "whoami": Console.WriteLine("user"); break;
+                    case "host":
+                        Console.WriteLine("alphari"); break;
+                        case "whoami": Console.WriteLine("user"); break;
                     case "ver": Console.WriteLine("Alphari v1.5.23"); break;
                     default:
                         Console.WriteLine($"cobalt: Not found: {parts[0]}");
