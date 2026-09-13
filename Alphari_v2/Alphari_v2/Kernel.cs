@@ -1,27 +1,15 @@
 using Alphari_v2.ATA;
-
 using Cosmos.Core;
-
 using Cosmos.Core.IOGroup;
-
 using Cosmos.HAL;
-
 using Cosmos.HAL.BlockDevice;
-
 using Cosmos.System.FileSystem;
-
 using Cosmos.System.FileSystem.VFS;
-
 using Microsoft.CSharp.RuntimeBinder;
-
 using System;
-
 using System.IO;
-
 using System.Threading;
-
 using ATA_PIO = Alphari_v2.ATA.ATA_PIO;
-
 using Sys = Cosmos.System;
 
 namespace Alphari_v2
